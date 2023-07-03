@@ -20,6 +20,13 @@ window.addEventListener('load', function () {
 
     XHR.onload = () => {
       const items = XHR.response.item;
+      appendChildSelect(items)
+      const childCategory = document.getElementById('child-select')
+
+      childCategory.addEventListener('change', () => {
+        selectChildElement('grand-child-select-wrap')
+        getGrandchildCategoryData(childCategory)
+      })
     }
   }
 
